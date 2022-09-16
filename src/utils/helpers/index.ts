@@ -1,0 +1,1 @@
+export { nameInitials } from './nameInitials'
