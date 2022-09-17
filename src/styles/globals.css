@@ -13,8 +13,10 @@ body {
   --color-purple-100: #CBCBD9;
   --color-purple-300: #8F8FAE;
   --color-purple-400: #79799E;
+  --color-purple-500: #585886;
   --color-purple-600:#50507A;
   --color-purple-700: #3E3E5F;
+  --color-purple-800: #30304A;
   --color-purple-900:#252538;
   --color-white: #fff;
   --color-black: #000;
@@ -27,6 +29,8 @@ body {
   --font-size-xl: 16px;
   --font-size-2xl: 18px;
   --font-size-3xl: 20px;
+  --font-size-4xl: 22px;
+  --font-size-5xl: 24px;
 }
 
 

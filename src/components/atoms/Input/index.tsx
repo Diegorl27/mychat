@@ -26,13 +26,13 @@ export const Input = ({type, name}:InputProps) => {
 
   const sxOptionsContainer = {
     border: (isMobile) ? '1px solid var(--color-purple-400)' :'1px solid var(--color-purple-300)',
-     '&hover':{
+     '&:hover':{
       border:'1px solid var(--color-purple-100)',
      },
     borderRadius:'4px',
     height: '56px',
     opacity: 0.23,
-    m: 1,
+    margin: '16px auto 18px auto',
     width: (isMobile) ? '328px' : '423px',
   }
 
@@ -59,7 +59,7 @@ export const Input = ({type, name}:InputProps) => {
   if(type === 'password') {
     return(
       <FormControl sx={sxOptionsContainer} variant="outlined">
-          <InputLabel sx={sxOptionsLabel}>Contraseña</InputLabel>
+          <InputLabel sx={sxOptionsLabel}>{name}</InputLabel>
           <OutlinedInput
             type={values.showPassword ? 'text' : 'password'}
             value={values.password}

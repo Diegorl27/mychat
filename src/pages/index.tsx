@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Avataricons, ButtonLogin, ChatImage, Input} from 'src/components/atoms'
+import { FormLogin } from 'src/components/molecules'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -15,10 +16,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
 
-          <ChatImage />
-          <Input type='password'/>
-          <Input type='text' name='nombre'/>
-          <Avataricons key={0} name='Diego Ramirez' />
+        <FormLogin title='Bienvenido'/>
 
       </main>
 

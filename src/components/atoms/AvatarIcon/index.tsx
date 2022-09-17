@@ -10,6 +10,7 @@ interface AvatariconsProps {
   isUndefined?: boolean
   key: number
   name: string
+  value: number
 }
 
 
@@ -18,12 +19,13 @@ export const Avataricons = ({
   isGroup = false,
   isUndefined = false,
   key,
-  name
+  name,
+  value
 }: AvatariconsProps) => {
 
   const isMobile = useMediaQuery('(max-width:600px)');
 
-  const IsPair = (key % 2) == 0
+  const IsPair = (value % 2) == 0
 
   console.log(key)
 
