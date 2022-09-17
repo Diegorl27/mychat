@@ -37,6 +37,8 @@ export const Input = ({type, name}:InputProps) => {
   }
 
   const sxOptionsLabel ={
+    backgroundColor: (isMobile) ? 'var(--color-primary)' : 'var(--color-white)',
+    color:'var(--color-purple-800)',
     fontSize:'var(--font-size-xl)',
   }
 
@@ -86,7 +88,6 @@ export const Input = ({type, name}:InputProps) => {
     <FormControl sx={sxOptionsContainer} variant="outlined">
       <InputLabel sx={sxOptionsLabel}>{name ? (name) : (type)}</InputLabel>
       <OutlinedInput
-            sx={sxOptionsLabel}
             type={type}
             label={name ? (name) : (type)}
         />

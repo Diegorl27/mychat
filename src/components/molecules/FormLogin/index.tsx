@@ -1,6 +1,4 @@
-import { TitleSharp } from '@mui/icons-material'
 import { Box, Divider, FormControl, Typography, useMediaQuery } from '@mui/material'
-import { display, height } from '@mui/system'
 import Link from 'next/link'
 import React from 'react'
 import { ButtonLogin, Input } from 'src/components/atoms'
@@ -33,6 +31,12 @@ export const FormLogin = ({title}:FormLoginProps) => {
     textDecoration:'underline',
   }
 
+  const sxOptionsBoxLinks = {
+    display:'flex',
+    marginTop:'12px',
+    justifyContent:'space-between'
+  }
+
 
   return (
     <Box>
@@ -45,9 +49,9 @@ export const FormLogin = ({title}:FormLoginProps) => {
         />
       </FormControl>
       <Divider sx={sxOptionsDivider}/>
-      <Box sx={{ display:'flex', marginTop:'12px', justifyContent:'space-between' }}>
+      <Box sx={sxOptionsBoxLinks}>
         <Typography sx={sxOptionsLinks}><Link href='/'><a>No tengo una cuenta</a></Link></Typography>
-        <Typography sx={sxOptionsLinks}><Link href='/'><a>No tengo una cuenta</a></Link></Typography>
+        <Typography sx={sxOptionsLinks}><Link href='/'><a>Recuperar contraseña</a></Link></Typography>
       </Box>
     </Box>
   )
