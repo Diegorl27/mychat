@@ -23,8 +23,9 @@ export const Avataricons = ({
 
   const isMobile = useMediaQuery('(max-width:600px)');
 
-  const IsPair = (key + 1) % 2 === 0
-  console.log(IsPair)
+  const IsPair = (key % 2) == 0
+
+  console.log(key)
 
   const sxOptions = {
     backgroundColor: (isMobile || IsPair) ? 'var(--color-purple-400)' : 'var(--color-purple-100)',
@@ -32,7 +33,7 @@ export const Avataricons = ({
     fontSize: 'var(--font-size-xl)',
     fontWeight: 500,
     height: '40px',
-    opacity: (IsPair) ? (0.24) : '',
+    opacity: (isMobile && IsPair) ? (0.24) : ' ',
     width: '40px'
   }
 
@@ -41,14 +42,14 @@ export const Avataricons = ({
   if (isGroup || isUndefined) {
     const icon = isGroup ? <PeopleAltOutlined /> : <PersonOutlineOutlined />
     return (
-      <Avatar sx={sxOptions} alt={name} >
+      <Avatar sx={sxOptions} alt={name}>
         {icon}
       </Avatar>
     )
   }
 
   return (
-    <Avatar sx={sxOptions} >
+    <Avatar  sx={sxOptions} >
       {nameInitials(name)}
     </Avatar>
   )
