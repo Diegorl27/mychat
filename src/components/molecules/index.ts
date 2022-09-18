@@ -1,2 +1,5 @@
 export { Form } from './Form'
 export { LogoMessage } from './LogoMessage'
+export { MessageList } from './MessageList'
+export { ChatBar } from './ChatBar'
+export { UserBar } from './UserBar'

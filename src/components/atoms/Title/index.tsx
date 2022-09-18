@@ -3,14 +3,16 @@ import React from 'react'
 
 interface TitleProps {
   color:string
+  margin?: string
+  title: string
   fontsize: string
   fontweight: number
-  title: string
   variant:string
 }
 
 export const Title = ({
   color,
+  margin,
   title,
   fontsize,
   fontweight,
@@ -18,9 +20,10 @@ export const Title = ({
 }:TitleProps) => {
 
   const sxOptions ={
-    color: (color),
-    fontSize: (fontsize),
-    fontWeight: (fontweight)
+    color: color,
+    fontSize: fontsize,
+    fontWeight: fontweight,
+    margin: margin
   }
 
   return (
