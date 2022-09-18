@@ -1,1 +1,2 @@
-export { FormLogin } from './FormLogin'
+export { Form } from './Form'
+export { LogoMessage } from './LogoMessage'

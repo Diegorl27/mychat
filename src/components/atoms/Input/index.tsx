@@ -31,7 +31,6 @@ export const Input = ({type, name}:InputProps) => {
      },
     borderRadius:'4px',
     height: '56px',
-    opacity: 0.23,
     margin: '16px auto 18px auto',
     width: (isMobile) ? '328px' : '423px',
   }

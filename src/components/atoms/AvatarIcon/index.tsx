@@ -27,8 +27,6 @@ export const Avataricons = ({
 
   const IsPair = (value % 2) == 0
 
-  console.log(key)
-
   const sxOptions = {
     backgroundColor: (isMobile || IsPair) ? 'var(--color-purple-400)' : 'var(--color-purple-100)',
     color: 'var(--color-purple-900)',
