@@ -40,6 +40,7 @@ export const ChatsList = ({onClick, takeDataContact, SetOpenChat}:ChatListProps)
     position: 'relative',
     overflow: 'auto',
     maxHeight: !isMobile ? '87vh' : '100vh',
+    padding: '0px',
   }
 
   const sxOptionListItem = {

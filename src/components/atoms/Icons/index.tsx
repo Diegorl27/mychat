@@ -1,5 +1,5 @@
 import React from 'react'
-import { MoreVert, ArrowBack, Search, ChatBubbleOutlineOutlined} from '@mui/icons-material/'
+import { MoreVert, ArrowBack, Search, ChatBubbleOutlineOutlined, SentimentSatisfiedAlt} from '@mui/icons-material/'
 
 interface IconsProps {
   color: string
@@ -30,6 +30,7 @@ export const Icons = ({
     <ChatBubbleOutlineOutlined sx={sxOptions} key={1}/>,
     <MoreVert sx={sxOptions} key={2}/>,
     <Search sx={sxOptions} key={3}/>,
+    <SentimentSatisfiedAlt sx={sxOptions} key={4}/>,
   ]
 
   return (

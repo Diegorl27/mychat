@@ -9,6 +9,7 @@ body {
 :root{
 
   /* Colors */
+  
   --color-primary: #F4F4FC;
   --color-purple-50: #EEEEF3;
   --color-purple-100: #CBCBD9;
@@ -21,6 +22,7 @@ body {
   --color-purple-900:#252538;
   --color-white: #fff;
   --color-black: #000;
+  --color-papper: #DCDDF5;
 
   /* Fonts */
   --font-size-xs:11px;

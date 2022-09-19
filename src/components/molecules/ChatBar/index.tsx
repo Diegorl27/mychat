@@ -4,7 +4,7 @@ import { Avataricon, Icons, Text, Title } from 'src/components/atoms'
 
 interface ChatBarProps {
   contact: any
-  setOpenChat: boolean
+  setOpenChat: any
 }
 
 
