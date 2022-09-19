@@ -43,10 +43,11 @@ export const UserBar = () => {
           key={0}
         />}
         <Title
+          alignItems='center'
           color='var(--color-purple-50)'
           fontsize={isMobile ? 'var(--font-size-3xl)' : 'var(--font-size-2xl)'}
           fontweight={500}
-          margin='10px 0px 0px 0px'
+          margin='0px 0px 0px 0px'
           title={isMobile ? 'Mis chats' : 'Diego Ramirez'}
           variant='h4'
         />

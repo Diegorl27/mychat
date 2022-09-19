@@ -35,7 +35,8 @@ export const Input = ({type, text, name, value, onChange}:InputProps) => {
     borderRadius:'4px',
     height: '56px',
     margin: '16px auto 18px auto',
-    width: (isMobile) ? '328px' : '423px',
+    maxWidth: (isMobile) ? '328px' : '423px',
+    width:'100%'
   }
 
   const sxOptionsLabel ={

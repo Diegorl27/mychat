@@ -1,29 +1,33 @@
 import { Typography } from '@mui/material'
-import { fontSize } from '@mui/system'
 import React from 'react'
+import style from './Text.module.css'
 interface TextProps {
+  align?: 'right' | 'left' | 'inherit' | 'center' | 'justify'
   color: string
   fontsize: string
   fontweight: number
   text: string
+  textEllipsis?: boolean
 }
 
 export const Text = ({
+  align,
   color,
   fontweight,
   fontsize,
-  text
-}:TextProps) => {
+  text,
+  textEllipsis = false
+}: TextProps) => {
 
-  const sxOptions ={
-    color:(color),
-    fontSize:(fontsize),
-    fontWeight:(fontweight)
+  const sxOptions = {
+    color: (color),
+    fontSize: (fontsize),
+    fontWeight: (fontweight)
   }
 
   return (
-    <Typography sx={sxOptions} variant='body1'>
-        {text}
+    <Typography className={textEllipsis ? style['text--ellipsis'] : ''} align={align} sx={sxOptions} variant='body1'>
+      {text}
     </Typography>
   )
 }

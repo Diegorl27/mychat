@@ -23,6 +23,7 @@ body {
   --color-white: #fff;
   --color-black: #000;
   --color-papper: #DCDDF5;
+  --color-blue-gradient: linear-gradient(195.3deg, #89A1FC 3.45%, #607CE1 93%)
 
   /* Fonts */
   --font-size-xs:11px;

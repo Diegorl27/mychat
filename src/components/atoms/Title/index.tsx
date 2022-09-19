@@ -2,6 +2,8 @@ import { Typography } from '@mui/material'
 import React from 'react'
 
 interface TitleProps {
+  alignItems?:string
+  alignText?:string
   color:string
   margin?: string
   title: string
@@ -11,6 +13,8 @@ interface TitleProps {
 }
 
 export const Title = ({
+  alignText,
+  alignItems,
   color,
   margin,
   title,
@@ -20,10 +24,13 @@ export const Title = ({
 }:TitleProps) => {
 
   const sxOptions ={
+    alignText:alignText,
+    alignItems:alignItems,
     color: color,
     fontSize: fontsize,
     fontWeight: fontweight,
-    margin: margin
+    margin: margin,
+    display:'flex'
   }
 
   return (

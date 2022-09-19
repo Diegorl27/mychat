@@ -65,6 +65,7 @@ export const ChatButton = ({
             fontsize='var(--font-size-sm)'
             fontweight={400}
             text={text}
+            textEllipsis
           />
         </Box>
       </Box>

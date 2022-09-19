@@ -3,63 +3,64 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { Button, Input, Links, Title } from 'src/components/atoms'
 
-interface FormLoginProps{
+interface FormLoginProps {
   title: string
   name?: string
   password?: string
 }
 
-export const Form = ({title}:FormLoginProps) => {
+export const Form = ({ title }: FormLoginProps) => {
 
   const isMobile = useMediaQuery('(max-width:600px)');
 
   const [dataLogin, setDataLogin] = useState({
-    name:'',
-    password:'',
+    name: '',
+    password: '',
   })
 
-  const handleChange = (e:React.ChangeEvent<HTMLInputElement>) =>{
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     console.log(dataLogin)
-    setDataLogin({...dataLogin,[name]:value })
+    setDataLogin({ ...dataLogin, [name]: value })
   }
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault()
-    if(dataLogin.name === '' && dataLogin.password === ''){
+    if (dataLogin.name === '' && dataLogin.password === '') {
       alert('rellena los campos')
-    }else{
+    } else {
       console.log(dataLogin)
     }
   }
 
-  const sxOptionsCard ={
-    display:'inline-flex',
+  const sxOptionsCard = {
+    display: 'inline-flex',
     height: '387px',
-    width: '487px',
+    width: '100%',
   }
 
   const sxOptionsContainerBox = {
-    margin: 'auto'
+    margin: '24px 32px',
+    width: '100%',
   }
 
   const sxOptionsDivider = {
-    backgroundColor:'var(--color-purple-500)',
-    height:'1px',
-    marginTop:'24px',
-    opacity:0.32 ,
-    width:(isMobile) ? '328px' :'423px'
+    backgroundColor: 'var(--color-purple-500)',
+    height: '1px',
+    marginTop: '24px',
+    opacity: 0.32,
+    width: (isMobile) ? '328px' : '100%'
   }
 
 
   const sxOptionsBoxLinks = {
-    display:'flex',
-    marginTop:'12px',
-    justifyContent:'space-between'
+    display: 'flex',
+    marginTop: '12px',
+    justifyContent: 'space-between'
   }
 
-  if(isMobile){
-    return(
+  if (isMobile) {
+    return (
       <Box>
         <Title
           color='var(--color-purple-800)'
@@ -68,7 +69,7 @@ export const Form = ({title}:FormLoginProps) => {
           title='Bienvenido'
           variant='h1'
         />
-        <FormControl>
+        <FormControl  sx={{ width:'100%' }} >
           <Input
             type='text'
             text='Usuario'
@@ -81,10 +82,12 @@ export const Form = ({title}:FormLoginProps) => {
             name='password'
             value='password'
           />
+          <Link href='/home'>
           <Button
             text='Iniciar Sesion'
-            onClick={()=>{console.log('log')}}
+            onClick={() => { console.log('log') }}
           ></Button>
+          </Link>
         </FormControl>
         <Divider sx={sxOptionsDivider} />
         <Box sx={sxOptionsBoxLinks}>
@@ -106,8 +109,8 @@ export const Form = ({title}:FormLoginProps) => {
           title='Bienvenido'
           variant='h1'
         />
-        <FormControl onSubmit={handleSubmit}>
-            <Input
+        <FormControl sx={{ width:'100%' }} onSubmit={handleSubmit}>
+          <Input
             onChange={handleChange}
             type='text'
             text='Usuario'
@@ -127,7 +130,7 @@ export const Form = ({title}:FormLoginProps) => {
             />
           </Link>
         </FormControl>
-        <Divider sx={sxOptionsDivider}/>
+        <Divider sx={sxOptionsDivider} />
         <Box sx={sxOptionsBoxLinks}>
           <Links text='Recuperar contraseña' />
           <Links text='No tengo cuenta' />

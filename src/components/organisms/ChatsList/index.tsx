@@ -17,16 +17,57 @@ const arrContacts = [
     isGroup:false,
     isUndefined:false,
     nameContact:'Luz Usuga',
-    text:'message',
+    text:'loreLorem ipsum dolor sit amet, conse.'
+
   },
   {
     key:1,
     value:1,
     isGroup:false,
     isUndefined:false,
+    nameContact:'Santiago Lopez',
+    text:'Lorem ipsum dolor sit amet, conse.',
+  },
+  {
+    key:2,
+    value:2,
+    isGroup:false,
+    isUndefined:false,
+    nameContact:'Pool Dead',
+    text:'Lorem ipsum dolor sit amet, conse.',
+  },
+  {
+    key:3,
+    value:3,
+    isGroup:false,
+    isUndefined:false,
     nameContact:'Andres Ramos',
-    text:'message',
-  }
+    text:'Lorem ipsum dolor sit amet, conse.',
+  },
+  {
+    key:4,
+    value:4,
+    isGroup:true,
+    isUndefined:false,
+    nameContact:'Grupo de oracion',
+    text:'Lorem ipsum dolor sit amet, conse.',
+  },
+  {
+    key:5,
+    value:5,
+    isGroup:false,
+    isUndefined:true,
+    nameContact:'13123444444',
+    text:'Lorem ipsum dolor sit amet, conse.',
+  },
+  {
+    key:6,
+    value:6,
+    isGroup:true,
+    isUndefined:false,
+    nameContact:'Grupo trabajo',
+    text:'Lorem ipsum dolor sit amet, conse.',
+  },
 ]
 
 export const ChatsList = ({onClick, takeDataContact, SetOpenChat}:ChatListProps) => {
@@ -39,8 +80,9 @@ export const ChatsList = ({onClick, takeDataContact, SetOpenChat}:ChatListProps)
     maxWidth: '100%',
     bgcolor: 'var(--color-white)',
     position: 'relative',
+    bottom:0,
     overflow: 'auto',
-    maxHeight: !isMobile ? '87vh' : '100vh',
+    maxHeight: !isMobile ? '100%' : '100vh',
     padding: '0px',
   }
 

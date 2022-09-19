@@ -32,7 +32,70 @@ const messages = [
     name: 'Luz Usuga',
     isUser: false,
     time: '9:48 p. m.'
-  }
+  },
+  {
+    key: 0,
+    text: 'Lorem ipsum dolor sit amet, consectetur .',
+    name: 'Luz Usuga',
+    isUser: false,
+    time: '9:48 p. m.'
+  },
+  {
+    key: 0,
+    text: 'Lorem ipsum dolor sit amet, conse.',
+    name: 'Luz Usuga',
+    isUser: false,
+    time: '9:48 p. m.'
+  },
+  {
+    key: 0,
+    text: 'Lorem ipsum dolorr adipiscing elit. Sed nibh malesuada sit.',
+    name: 'Diego Ramirez',
+    isUser: true,
+    time: '9:48 p. m.'
+  },
+  {
+    key: 0,
+    text: 'Lorem ipsum dolor sit amet, consectetur .',
+    name: 'Luz Usuga',
+    isUser: false,
+    time: '9:48 p. m.'
+  },
+  {
+    key: 0,
+    text: 'Lorem ipsum dolor sit amet, consectetur .',
+    name: 'Luz Usuga',
+    isUser: false,
+    time: '9:48 p. m.'
+  },
+  {
+    key: 0,
+    text: 'Lorem ipsum dolor sit amet, conse.',
+    name: 'Luz Usuga',
+    isUser: false,
+    time: '9:48 p. m.'
+  },
+  {
+    key: 0,
+    text: 'Lorem ipsum dolorr adipiscing elit. Sed nibh malesuada sit.',
+    name: 'Diego Ramirez',
+    isUser: true,
+    time: '9:48 p. m.'
+  },
+  {
+    key: 0,
+    text: 'Lorem ipsum dolor sit amet, consectetur .',
+    name: 'Luz Usuga',
+    isUser: false,
+    time: '9:48 p. m.'
+  },
+  {
+    key: 0,
+    text: 'Lorem ipsum dolor sit amet, consectetur .',
+    name: 'Luz Usuga',
+    isUser: false,
+    time: '9:48 p. m.'
+  },
 ]
 
 export const Conversation = ({
@@ -56,6 +119,7 @@ export const Conversation = ({
     overflow: 'auto',
     maxHeight: !isMobile ? '80.8vh' : '100vh',
     padding: '0px',
+    paddingBottom:(isMobile) ? '130px' :'70px'
   }
 
   const sxOptionListItem = {
