@@ -4,7 +4,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 interface InputProps {
   amount?: string
-  onChange?:any
+  onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>
   password?: string
   showPassword?: boolean
   name: string

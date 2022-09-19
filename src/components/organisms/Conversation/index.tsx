@@ -2,12 +2,13 @@ import React from 'react'
 import {Box, Grid, List, ListItem, useMediaQuery } from '@mui/material'
 import { InputChat } from 'src/components/atoms'
 import { ChatBar, Message} from 'src/components/molecules'
+import { arrContacts } from 'src/interfaces';
 
 interface ConversationProps {
-  setOpenChat: any
+  setOpenChat: (open:boolean) => void;
   openChat: boolean
-  contact: any
-  setDataContact: any
+  contact: arrContacts
+  setDataContact: (contact:arrContacts) => void
 }
 
 const messages = [

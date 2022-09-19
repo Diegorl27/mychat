@@ -1,4 +1,4 @@
-import {Grid, useMediaQuery } from '@mui/material'
+import { Grid, useMediaQuery } from '@mui/material'
 import type { NextPage } from 'next'
 import { LogoMessage } from 'src/components/molecules'
 import { Form } from 'src/components/organisms'

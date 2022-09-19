@@ -2,7 +2,7 @@ import { Box } from '@mui/system'
 import React from 'react'
 
 interface BoxMessageProps{
-  children:any
+  children: React.ReactElement
   backgroundColor:string
   color:string
 }

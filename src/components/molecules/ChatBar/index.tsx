@@ -1,10 +1,11 @@
 import { Box, Button, useMediaQuery } from '@mui/material'
 import React from 'react'
 import { Avataricon, Icons, Text, Title } from 'src/components/atoms'
+import {arrContacts} from 'src/interfaces'
 
 interface ChatBarProps {
-  contact: any
-  setOpenChat: any
+  contact: arrContacts
+  setOpenChat: (open:boolean) => void
 }
 
 

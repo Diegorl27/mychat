@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { Grid, List, ListItem, useMediaQuery } from '@mui/material'
 import { SearchInput } from 'src/components/atoms'
 import { ChatButton, UserBar } from 'src/components/molecules'
+import { arrContacts } from 'src/interfaces'
 
 interface ChatListProps {
   onClick?:() => void
-  takeDataContact:any
-  SetOpenChat:any
+  takeDataContact:(contacts:arrContacts) => void
+  SetOpenChat:(open:boolean) => void
 }
 
 const arrContacts = [

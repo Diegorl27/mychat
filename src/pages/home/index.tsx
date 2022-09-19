@@ -10,37 +10,37 @@ export default function Home() {
   const [openChat, setOpenChat] = useState(false)
   const [contact, setDataContact] = useState([])
 
-  const takeDataContact = (data) =>{
+  const takeDataContact = (data) => {
     setDataContact(data)
   }
 
   useEffect(() => {
-    if(openChat === false){
+    if (openChat === false) {
       setDataContact([])
     }
-  },[openChat])
+  }, [openChat])
 
   const showChatList = () => {
-    if(isMobile === true && openChat === false){
-      return(
-      <ChatsList
-        takeDataContact={takeDataContact}
-        SetOpenChat={setOpenChat}
-        />
-      )
-    }else if(isMobile === false){
-      return(
+    if (isMobile === true && openChat === false) {
+      return (
         <ChatsList
           takeDataContact={takeDataContact}
           SetOpenChat={setOpenChat}
-          />
+        />
+      )
+    } else if (isMobile === false) {
+      return (
+        <ChatsList
+          takeDataContact={takeDataContact}
+          SetOpenChat={setOpenChat}
+        />
       )
     }
   }
 
   const showConversation = () => {
-    if(openChat === true && isMobile === true) {
-      return(
+    if (openChat === true && isMobile === true) {
+      return (
         <Conversation
           contact={contact}
           setDataContact={setDataContact}
@@ -48,47 +48,47 @@ export default function Home() {
           openChat={openChat}
         />
       )
-    }else if(openChat===true){
-     return(
-      <Conversation
-      contact={contact}
-      setDataContact={setDataContact}
-      setOpenChat={setOpenChat}
-      openChat={openChat}
-    />
-     )
+    } else if (openChat === true) {
+      return (
+        <Conversation
+          contact={contact}
+          setDataContact={setDataContact}
+          setOpenChat={setOpenChat}
+          openChat={openChat}
+        />
+      )
     }
   }
 
-  const showLogo = () =>{
-    if(openChat === false && isMobile===false){
+  const showLogo = () => {
+    if (openChat === false && isMobile === false) {
       return (<Grid item xs={12} textAlign='center'>
-      <Box sx={sxOptionsBoxLogo}>
-        <LogoMessage title='Bienvenidos al chat' text={textDefault} />
-      </Box>
-    </Grid>)
+        <Box sx={sxOptionsBoxLogo}>
+          <LogoMessage title='Bienvenidos al chat' text={textDefault} />
+        </Box>
+      </Grid>)
     }
   }
 
 
-  const sxOptiOptionsContainer =  {
-   maxWidth:'100%',
-   MaxHeight:'100vh'
+  const sxOptiOptionsContainer = {
+    maxWidth: '100%',
+    MaxHeight: '100vh'
   }
 
   const sxOptionsBoxLogo = {
-    width:'400px',
-    height:'500px',
-    display:'inline-block',
-    margin:'70px 0'
+    width: '400px',
+    height: '500px',
+    display: 'inline-block',
+    margin: '70px 0'
   }
 
 
   return (
-      <Grid wrap='nowrap' container sx={sxOptiOptionsContainer}>
-        {showChatList()}
-        {showConversation()}
-        {showLogo()}
-      </Grid>
+    <Grid wrap='nowrap' container sx={sxOptiOptionsContainer}>
+      {showChatList()}
+      {showConversation()}
+      {showLogo()}
+    </Grid>
   )
 }
