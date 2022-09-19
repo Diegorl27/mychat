@@ -25,7 +25,7 @@ export const Conversation = ({
 
 return (
   <Grid item xs={12} sx={sxOptions}>
-    <ChatBar />
+    <ChatBar contact={contact}/>
   </Grid>
 )
 

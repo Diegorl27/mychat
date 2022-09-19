@@ -2,8 +2,12 @@ import { Box, Button, useMediaQuery } from '@mui/material'
 import React from 'react'
 import { Avataricon, Icons, Text, Title } from 'src/components/atoms'
 
+interface ChatBarProps {
+  contact: any
+}
 
-export const ChatBar = () => {
+
+export const ChatBar = ({contact}:ChatBarProps) => {
 
   const isMobile = useMediaQuery('(max-width:600px)')
 
@@ -48,7 +52,7 @@ export const ChatBar = () => {
        <Avataricon
           colorUser='var(--color-purple-50)'
           margin='0px 8px 0px 8px'
-          name='Diego Ramirez'
+          name={contact.nameContact}
           key={0}
         />
         <Box>
@@ -57,7 +61,7 @@ export const ChatBar = () => {
             fontsize={isMobile ? 'var(--font-size-3xl)' : 'var(--font-size-2xl)'}
             fontweight={500}
             margin='024 0px 28pxx 0px'
-            title='Diego Ramirez'
+            title={contact.nameContact}
             variant='h4'
           />
           <Text

@@ -14,6 +14,8 @@ export default function Prueba() {
     setDataContact(data)
   }
 
+  console.log(contact)
+
   const showChatList = () => {
     if(isMobile === true && openChat === false){
       return(
