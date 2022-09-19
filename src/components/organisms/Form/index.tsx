@@ -121,7 +121,7 @@ export const Form = ({title}:FormLoginProps) => {
             name='password'
             value={dataLogin.password}
           />
-          <Link href='/pruebasChat'>
+          <Link href='/home'>
             <Button
               text='Iniciar Sesion'
             />
