@@ -7,7 +7,7 @@ interface TitleProps {
   title: string
   fontsize: string
   fontweight: number
-  variant:string
+  variant:any
 }
 
 export const Title = ({

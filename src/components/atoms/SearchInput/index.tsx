@@ -15,7 +15,7 @@ export const SearchInput = ({
   const sxOptionsContainer = {
     justifyContent:'center',
     height: '60px',
-    width:'423px'
+    width:'100%'
   }
 
 

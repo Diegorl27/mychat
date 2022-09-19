@@ -4,15 +4,18 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 interface InputProps {
   amount?: string
+  onChange?:any
   password?: string
   showPassword?: boolean
+  name: string
   type:string
-  name?: string
+  text?: string
+  value: string
   weightRange?: string
   weight?: string
 }
 
-export const Input = ({type, name}:InputProps) => {
+export const Input = ({type, text, name, value, onChange}:InputProps) => {
 
   const [values, setValues] = useState({
     amount: '',
@@ -41,11 +44,6 @@ export const Input = ({type, name}:InputProps) => {
     fontSize:'var(--font-size-xl)',
   }
 
-  const handleChange =
-    (prop: keyof InputProps) => (event: React.ChangeEvent<HTMLInputElement>) => {
-      setValues({ ...values, [prop]: event.target.value })
-    }
-
   const handleClickShowPassword = () => {
     setValues({
       ...values,
@@ -60,11 +58,12 @@ export const Input = ({type, name}:InputProps) => {
   if(type === 'password') {
     return(
       <FormControl sx={sxOptionsContainer} variant="outlined">
-          <InputLabel sx={sxOptionsLabel}>{name}</InputLabel>
+          <InputLabel sx={sxOptionsLabel}>{text}</InputLabel>
           <OutlinedInput
             type={values.showPassword ? 'text' : 'password'}
-            value={values.password}
-            onChange={handleChange('password')}
+            name={name}
+            value={value}
+            onChange={onChange}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -85,10 +84,13 @@ export const Input = ({type, name}:InputProps) => {
 
   return (
     <FormControl sx={sxOptionsContainer} variant="outlined">
-      <InputLabel sx={sxOptionsLabel}>{name ? (name) : (type)}</InputLabel>
+      <InputLabel sx={sxOptionsLabel}>{text ? (text) : (type)}</InputLabel>
       <OutlinedInput
+            name={name}
+            value={value}
+            onChange={onChange}
             type={type}
-            label={name ? (name) : (type)}
+            label={text ? (text) : (type)}
         />
     </FormControl>
   )

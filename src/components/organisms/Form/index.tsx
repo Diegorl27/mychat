@@ -1,14 +1,37 @@
-import { Box, Card, Divider, FormControl, Typography, useMediaQuery } from '@mui/material'
-import React from 'react'
+import { Box, Card, Divider, FormControl, useMediaQuery } from '@mui/material'
+import Link from 'next/link'
+import React, { useState } from 'react'
 import { Button, Input, Links, Title } from 'src/components/atoms'
 
 interface FormLoginProps{
   title: string
+  name?: string
+  password?: string
 }
 
 export const Form = ({title}:FormLoginProps) => {
 
   const isMobile = useMediaQuery('(max-width:600px)');
+
+  const [dataLogin, setDataLogin] = useState({
+    name:'',
+    password:'',
+  })
+
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement>) =>{
+    const { name, value } = e.target
+    console.log(dataLogin)
+    setDataLogin({...dataLogin,[name]:value })
+  }
+
+  const handleSubmit = (e:any) => {
+    e.preventDefault()
+    if(dataLogin.name === '' && dataLogin.password === ''){
+      alert('rellena los campos')
+    }else{
+      console.log(dataLogin)
+    }
+  }
 
   const sxOptionsCard ={
     display:'inline-flex',
@@ -46,8 +69,18 @@ export const Form = ({title}:FormLoginProps) => {
           variant='h1'
         />
         <FormControl>
-          <Input type='text' name='Usuario' />
-          <Input type='password' name='Contraseña' />
+          <Input
+            type='text'
+            text='Usuario'
+            name='name'
+            value='name'
+          />
+          <Input
+            type='password'
+            text='Contraseña'
+            name='password'
+            value='password'
+          />
           <Button
             text='Iniciar Sesion'
             onClick={()=>{console.log('log')}}
@@ -73,13 +106,26 @@ export const Form = ({title}:FormLoginProps) => {
           title='Bienvenido'
           variant='h1'
         />
-        <FormControl>
-          <Input type='text' name='Usuario' />
-          <Input type='password' name='Contraseña' />
-          <Button
-            text='login'
-            onClick={() => {console.log('te Logueaste') }}
+        <FormControl onSubmit={handleSubmit}>
+            <Input
+            onChange={handleChange}
+            type='text'
+            text='Usuario'
+            name='name'
+            value={dataLogin.name}
           />
+          <Input
+            onChange={handleChange}
+            type='password'
+            text='Contraseña'
+            name='password'
+            value={dataLogin.password}
+          />
+          <Link href='/pruebasChat'>
+            <Button
+              text='Iniciar Sesion'
+            />
+          </Link>
         </FormControl>
         <Divider sx={sxOptionsDivider}/>
         <Box sx={sxOptionsBoxLinks}>

@@ -2,27 +2,47 @@ import React from 'react'
 import {Button as Btn } from '@mui/material';
 
 interface ButtonProps {
+  backgroundcolor?: string
+  color?: string
+  fontsize?: string
+  fontweight?: number
+  hoverBackground?: string
+  height?: string
+  onClick?: () => void
   text: string
-  onClick: () => void
+  width?: string
 }
 
-export const Button = (props:ButtonProps):React.ReactElement => {
-  const {
-    text,
-    onClick
-  } = props
+export const Button = ({
+  backgroundcolor,
+  color,
+  fontsize,
+  fontweight,
+  text,
+  hoverBackground,
+  height,
+  onClick,
+  width,
+}:ButtonProps):React.ReactElement => {
 
   const sxOptions = {
-    color: 'var(--color-white)',
-    fontSize: 'var(--font-size-lg)',
-    fontWeight:500,
-    backgroundColor:'var(--color-purple-700)',
+    color: color ? color : 'var(--color-white)',
+    backgroundColor: backgroundcolor ? backgroundcolor : 'var(--color-purple-700)',
     '&:hover':{
-      backgroundColor: 'var(--color-purple-900)',
+      backgroundColor: hoverBackground ? hoverBackground : 'var(--color-purple-800)',
+    fontSize: fontsize ? fontsize : 'var(--font-size-lg)',
+    fontWeight: fontweight ? fontweight : 500,
+    height: height,
+    width: width,
     },
   }
 
   return (
-    <Btn sx={sxOptions} onClick={ onClick } >{text}</Btn>
+    <Btn 
+      onClick={ onClick }
+      sx={sxOptions}
+    >
+      {text}
+    </Btn>
   )
 }

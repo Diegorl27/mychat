@@ -12,7 +12,7 @@ export const UserBar = () => {
     display:'flex',
     justifyContent: 'space-between',
     height:'60px',
-    width:(isMobile) ? '360px' : '420px'
+    width:(isMobile) ? '102%' : '102.5%'
   }
 
   const sxOptionsContainerIcons1 = {
@@ -36,18 +36,18 @@ export const UserBar = () => {
   return (
     <Box sx={sxOptionsContainer}>
       <Box sx={sxOptionsContainerIcons1}>
-        <Avataricon
+        {!isMobile && <Avataricon
           colorUser='var(--color-purple-50)'
           margin='0px 8px 0px 0px'
           name='Diego Ramirez'
           key={0}
-        />
+        />}
         <Title
           color='var(--color-purple-50)'
-          fontsize='var(--font-size-2xl)'
+          fontsize={isMobile ? 'var(--font-size-3xl)' : 'var(--font-size-2xl)'}
           fontweight={500}
           margin='10px 0px 0px 0px'
-          title='Diego Ramirez'
+          title={isMobile ? 'Mis chats' : 'Diego Ramirez'}
           variant='h4'
         />
       </Box>
