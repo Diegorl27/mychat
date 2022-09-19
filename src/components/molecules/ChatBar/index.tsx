@@ -4,10 +4,11 @@ import { Avataricon, Icons, Text, Title } from 'src/components/atoms'
 
 interface ChatBarProps {
   contact: any
+  setOpenChat: boolean
 }
 
 
-export const ChatBar = ({contact}:ChatBarProps) => {
+export const ChatBar = ({contact, setOpenChat}:ChatBarProps) => {
 
   const isMobile = useMediaQuery('(max-width:600px)')
 
@@ -40,7 +41,7 @@ export const ChatBar = ({contact}:ChatBarProps) => {
   return (
     <Box sx={sxOptionsContainer}>
       <Box sx={sxOptionsContainerIcons1}>
-      <Button sx={sxOptionButtonsIcon}>
+      <Button onClick={()=>{setOpenChat(false)}} sx={sxOptionButtonsIcon}>
         <Icons
           color={!isMobile ? 'var(--color-white)' :'var(--color-purple-50)'}
           height={isMobile ? '24px':'28px'}

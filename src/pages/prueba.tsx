@@ -1,5 +1,5 @@
 import { Box, Grid, useMediaQuery } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { LogoMessage, MessageList } from 'src/components/molecules'
 import { ChatsList, Conversation } from 'src/components/organisms'
 
@@ -14,7 +14,11 @@ export default function Prueba() {
     setDataContact(data)
   }
 
-  console.log(contact)
+  useEffect(() => {
+    if(openChat === false){
+      setDataContact([])
+    }
+  },[openChat])
 
   const showChatList = () => {
     if(isMobile === true && openChat === false){
